@@ -20,3 +20,10 @@ app.get("/", (req, res) => {
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Import routes
+const puppyRoutes = require("./routes/puppyRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+
+// Use routes
+app.use("/api/puppies", puppyRoutes);
+app.use("/api/orders", orderRoutes);
